@@ -22,7 +22,7 @@ namespace TinyProject.Models
 
         public static String completeUrl(String adding)
         {
-            String url = "https://www.breakingbadapi.com/api";
+            String url = "https://www.breakingbadapi.com/api/";
             
             return url + adding;
         }
@@ -33,9 +33,10 @@ namespace TinyProject.Models
             using (HttpClient client = await GetClient())
             {
                 
-                String url = completeUrl("charachters");
+                String url = completeUrl("characters");
                 Debug.WriteLine(url);
                 String json = await client.GetStringAsync(url);
+
                 if (json != null)
                 {
                     List<Character> characters = JsonConvert.DeserializeObject<List<Character>>(json);

@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace TinyProject.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Overview : ContentPage
+    public partial class OverviewPage : ContentPage
     {
-        public Overview()
+        public OverviewPage()
         {
             InitializeComponent();
         }
