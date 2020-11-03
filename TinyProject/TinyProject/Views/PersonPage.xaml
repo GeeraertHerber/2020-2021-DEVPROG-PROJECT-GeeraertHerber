@@ -15,7 +15,7 @@
             <ListView x:Name="lvwPersons" Grid.Row="2" SeparatorColor="SteelBlue" RowHeight="75">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
+                        <ViewCell>  
                             <Grid BackgroundColor="White">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100"/>

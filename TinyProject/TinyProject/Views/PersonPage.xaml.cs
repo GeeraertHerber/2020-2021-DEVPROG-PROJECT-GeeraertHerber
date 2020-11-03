@@ -15,10 +15,10 @@ namespace TinyProject.Views
         public PersonPage()
         {
             InitializeComponent();
-            GetPersons();
+            ShowPersons();
         }
 
-        private async void GetPersons()
+        private async void ShowPersons()
         {
 
         }
