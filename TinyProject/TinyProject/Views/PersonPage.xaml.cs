@@ -10,11 +10,17 @@ using Xamarin.Forms.Xaml;
 namespace TinyProject.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class OverviewPage : ContentPage
+    public partial class PersonPage : ContentPage
     {
-        public OverviewPage()
+        public PersonPage()
         {
             InitializeComponent();
+            GetPersons();
+        }
+
+        private async void GetPersons()
+        {
+
         }
     }
 }

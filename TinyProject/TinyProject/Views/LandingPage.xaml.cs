@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,31 +18,44 @@ namespace TinyProject.Views
             InitializeComponent();
 
             TapGestureRecognizer tapCharachter = new TapGestureRecognizer();
-            tapGestureRecognizer.Tapped += TapCharacterTapped;
-            frmCharater.GestureRecognizers.Add(tapGestureRecognizer);
+            tapCharachter.Tapped += TapCharacterTapped;
+            frmCharacter.GestureRecognizers.Add(tapCharachter);
 
-            TapGestureRecognizer tapGestureRecognizer1 = new TapGestureRecognizer();
-            tapGestureRecognizer1.Tapped += TapGestureRecognizer_Tapped1;
-            frmOverview.GestureRecognizers.Add(tapGestureRecognizer1);
 
-            TapGestureRecognizer tapGestureRecognizer2 = new TapGestureRecognizer();
-            tapGestureRecognizer2.Tapped += TapGestureRecognizer_Tapped2;
-            frmLogout.GestureRecognizers.Add(tapGestureRecognizer2);
+            TapGestureRecognizer tapQuote = new TapGestureRecognizer();
+            tapQuote.Tapped += TapQuoteTapped;
+            frmQuote.GestureRecognizers.Add(tapQuote);
+
+            TapGestureRecognizer tapDeath = new TapGestureRecognizer();
+            tapDeath.Tapped += TapDeathTapped;
+            frmDeaths.GestureRecognizers.Add(tapDeath);
+
+            TapGestureRecognizer tapRandom = new TapGestureRecognizer();
+            tapRandom.Tapped += TapRandomTapped;
+            frmRandom.GestureRecognizers.Add(tapRandom);
         }
-        private void TapCharachterTapped(object sender, EventArgs e)
+        private void TapCharacterTapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new OverviewPage);
+            Navigation.PushAsync(new PersonPage());
         }
 
-        private void TapGestureRecognizer_Tapped1(object sender, EventArgs e)
+        private void TapQuoteTapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new OverviewPage(Email, User));
+            Navigation.PushAsync(new QuotePage());
         }
 
-        //Log-out
-        private void TapGestureRecognizer_Tapped2(object sender, EventArgs e)
+        private void TapDeathTapped(object sender, EventArgs e)
         {
-            Navigation.PopAsync();
+            Navigation.PushAsync(new DeathPage());
+        }
+
+        private void TapRandomTapped(object sender, EventArgs e)
+        {
+            var random = new Random();
+            var pages = new List<String> { "DeathPage", "QuotePage", "PersonPage" };
+            int index = random.Next(pages.Count);
+            Console.WriteLine(pages[index]);
+            Navigation.PushAsync(new );
         }
     }
 }

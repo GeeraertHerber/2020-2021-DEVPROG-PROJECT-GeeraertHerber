@@ -4,29 +4,33 @@
              x:Class="TinyProject.Views.LandingPage"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <Grid>
+        <Grid BackgroundColor="#FFFF00">
             <Grid.RowDefinitions>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                
             </Grid.RowDefinitions>
-            <Image Aspect="AspectFill" Source="https://www.trending.nl/wp-content/uploads/2019/10/Breaking-Bad.jpg"/>
-            <BoxView Grid.Row="1" BackgroundColor="#FFFF00"/>
+            <Image Aspect="AspectFill" Source="https://www.trending.nl/wp-content/uploads/2019/10/Breaking-Bad.jpg" Margin="0,0,0,8"/>
+            <Label Grid.Row="1" Text="Breaking Bad, the app" TextColor="Black" FontSize="Large" HorizontalOptions="Center"/>
             <Grid Grid.Row="2" RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Frame x:Name="frmCharacter" Grid.Row="0" Padding="0" Margin="1" OutlineColor="SteelBlue">
+                <Frame x:Name="frmCharacter" Grid.Row="0" Padding="0" Margin="0,8,0,8" >
                     <Label Text="Characters" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" Margin="16"/>
                 </Frame>
-                <Frame x:Name="frmOverQuote" Grid.Row="1" Padding="0" Margin="1" OutlineColor="SteelBlue">
+                <Frame x:Name="frmQuote" Grid.Row="1" Padding="0" Margin="0,8,0,8" >
                     <Label Text="Quotes" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" Margin="16"/>
                 </Frame>
-                <Frame x:Name="frmDeaths" Grid.Row="2" Padding="0" Margin="1" OutlineColor="SteelBlue">
+                <Frame x:Name="frmDeaths" Grid.Row="2" Padding="0" Margin="0,8,0,8">
                     <Label Text="Deaths" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" Margin="16"/>
+                </Frame>
+                <Frame x:Name="frmRandom" Grid.Row="3" Padding="0" Margin="0,8,0,8" >
+                    <Label Text="Something random" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" Margin="16"/>
                 </Frame>
             </Grid>
         </Grid>
