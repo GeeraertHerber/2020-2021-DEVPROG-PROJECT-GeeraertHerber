@@ -20,20 +20,42 @@ namespace TinyProject.Models
             public string category { get; set; }
             public List<int> better_call_saul_appearance { get; set; }
      
-            public String AppearanceToString { get
+            public String AppearanceToString
             {
-                if(appearance.Count == 1)
+                get
                 {
-                    return $"Season: + {appearance[0]}";
-                }
-                String seasons = "Seasons: ";
-                foreach(int season in appearance)
-                {
-                    seasons += $"{season},";
-                }
-                return seasons;
+                    if (appearance.Count == 1)
+                    {
+                        return $"Season: {appearance[0]}";
+                    }
+                    String seasons = "Seasons: ";
+                    foreach (int season in appearance)
+                    {
+                        seasons += $"{season},";
+                    }
+                    return seasons;
 
-            } 
+                }
+            }
+            public String OccupationToString 
+            { get
+                   {
+                    if(occupation.Count == 1)
+                    {
+                        return $"Occupation: {occupation[0]} ";
+                    }
+                    String occupations = "Occupations:";
+                    int counter = 0;
+                    for(int i = 0; i < occupation.Count - 1; i++)
+                    {
+                        occupations += occupation[i];
+                        counter += 1;
+                    }
+                    occupations += $" and {occupation[counter + 1]}";
+                    return occupations;
+                
+                    }
+            }
         }
     }
-}
+

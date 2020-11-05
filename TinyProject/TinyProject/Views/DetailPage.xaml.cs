@@ -28,6 +28,10 @@ namespace TinyProject.Views
             lblName.Text = character[0].name;
             lblAppearance.Text = character[0].AppearanceToString;
             imgUrl.Source = character[0].img;
+            lblNickname.Text = character[0].nickname;
+            lblStatus.Text = character[0].status;
+            lblOccupation.Text = character[0].OccupationToString;
+
         }
     }
 }

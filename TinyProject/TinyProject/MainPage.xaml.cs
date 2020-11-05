@@ -26,7 +26,11 @@ namespace TinyProject
 
             List<Character> character = await BBRepository.GetOneCharacterAsync(1);
             Console.WriteLine(character);
-            
+
+            List<Quote> quotes = await BBRepository.GetQuotes(1);
+            Console.WriteLine(quotes.Count);
+
+
         }
     }
 }

@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <Grid BackgroundColor="LightGoldenrodYellow">
             <Grid.RowDefinitions>
-                <RowDefinition Height="200"/>
+                <RowDefinition Height="100"/>
                 <RowDefinition Height="10"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition/>
@@ -15,19 +15,49 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition/>
-                    <ColumnDefinition/>
+                   
                 </Grid.ColumnDefinitions>
-                <StackLayout>
+                <StackLayout Padding="8">
                     <Image x:Name="imgUrl" Source="" Aspect="AspectFit"/>
                 </StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackLayout VerticalOptions="Center" Grid.Column="1" Padding="8">
+
+                        <Label Text="Name:" TextColor="Black" FontSize="Medium"/>
+                        <Label x:Name="lblName" TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Nickname(s):" TextColor="Black" FontSize="Medium"/>
+                        <Label x:Name="lblNickname" TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Is alive?" TextColor="Black" FontSize="Medium"/>
+                        <Label x:Name="lblStatus" TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
+                    </StackLayout>
+                </Grid>
                 <StackLayout VerticalOptions="Center" Grid.Column="1" Padding="8">
-                    <Label Text="Name:" TextColor="Black"/>
-                    <Label x:Name="lblName" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                    <Label Text=" Hoi"/>
+
                 </StackLayout>
             </Grid>
             
             <StackLayout VerticalOptions="Center" Grid.Row="3" Padding="8">
-                <Label x:Name="lblAppearance"  TextColor="Black" VerticalOptions="Center"/>
+                <Label Text="Appearcences:" TextColor="Black" FontSize="Medium"/>
+                <Label x:Name="lblAppearance"  TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="Center" Grid.Row="4" Padding="8">
+                <Label Text="Occupations:" TextColor="Black" FontSize="Medium"/>
+                <Label x:Name="lblOccupation"  TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="Center" Grid.Row="5" Padding="8">
+                <Label Text="Appearcences:" TextColor="Black" FontSize="Medium"/>
+                <Label x:Name=""  TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

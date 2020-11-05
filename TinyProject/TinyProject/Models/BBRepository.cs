@@ -46,7 +46,7 @@ namespace TinyProject.Models
                 {
                     return null;
                 }
-                //json -> List<TrelloBoard>
+                
             }
         }
         public static async Task<List<Character>> GetOneCharacterAsync(int itemIndex)
@@ -56,7 +56,10 @@ namespace TinyProject.Models
             {
 
                 String url = completeUrl($"characters/{itemIndex}");
-                Debug.WriteLine(url);
+                if(itemIndex == -1)
+                {
+                    url = completeUrl("character/random");
+                }
                 String json = await client.GetStringAsync(url);
 
                 if (json != null)
@@ -68,7 +71,33 @@ namespace TinyProject.Models
                 {
                     return null;
                 }
-                //json -> List<TrelloBoard>
+                
+            }
+        }
+
+        public static async Task<List<Quote>> GetQuotes(int itemIndex)
+        {
+
+            using (HttpClient client = await GetClient())
+            {
+
+                String url = completeUrl($"quotes");
+                if (itemIndex == -1)
+                {
+                    url = completeUrl("quote/random");
+                }
+                String json = await client.GetStringAsync(url);
+
+                if (json != null)
+                {
+                    List<Quote> quote = JsonConvert.DeserializeObject<List<Quote>>(json);
+                    return quote;
+                }
+                else
+                {
+                    return null;
+                }
+                
             }
         }
     }

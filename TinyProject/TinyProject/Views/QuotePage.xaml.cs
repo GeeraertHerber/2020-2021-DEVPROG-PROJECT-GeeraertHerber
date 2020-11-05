@@ -12,8 +12,10 @@ namespace TinyProject.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class QuotePage : ContentPage
     {
-        public QuotePage()
+        public int ItemIndex { get; set; }
+        public QuotePage(int itmIndex = 0)
         {
+            ItemIndex = ItemIndex;
             InitializeComponent();
         }
     }

@@ -13,6 +13,7 @@ namespace TinyProject.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LandingPage : ContentPage
     {
+        private readonly Random _random = new Random();
         public LandingPage()
         {
             InitializeComponent();
@@ -57,7 +58,22 @@ namespace TinyProject.Views
             //var pages = new List<String> { "DeathPage", "QuotePage", "PersonPage" };
             //int index = random.Next(pages.Count);
             //Console.WriteLine(pages[index]);
-            Navigation.PushAsync(new PersonPage());
+     
+
+            int randomInt = _random.Next(3);
+            Console.WriteLine(randomInt);
+            if(randomInt == 0)
+            {
+                Navigation.PushAsync(new DetailPage(-1));
+            }
+            else if(randomInt == 1)
+            {
+                Navigation.PushAsync(new QuotePage(-1));
+            }
+            else if(randomInt == 2)
+            {
+                Navigation.PushAsync(new DeathPage(-1));
+            }
         }
     }
 }
