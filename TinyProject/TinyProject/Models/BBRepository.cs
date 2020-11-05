@@ -49,5 +49,27 @@ namespace TinyProject.Models
                 //json -> List<TrelloBoard>
             }
         }
+        public static async Task<List<Character>> GetOneCharacterAsync(int itemIndex)
+        {
+
+            using (HttpClient client = await GetClient())
+            {
+
+                String url = completeUrl($"characters/{itemIndex}");
+                Debug.WriteLine(url);
+                String json = await client.GetStringAsync(url);
+
+                if (json != null)
+                {
+                    List<Character> character = JsonConvert.DeserializeObject<List<Character>>(json);
+                    return character;
+                }
+                else
+                {
+                    return null;
+                }
+                //json -> List<TrelloBoard>
+            }
+        }
     }
 }

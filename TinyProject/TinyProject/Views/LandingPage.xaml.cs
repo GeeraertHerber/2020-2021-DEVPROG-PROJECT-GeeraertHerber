@@ -34,6 +34,8 @@ namespace TinyProject.Views
             tapRandom.Tapped += TapRandomTapped;
             frmRandom.GestureRecognizers.Add(tapRandom);
         }
+
+        
         private void TapCharacterTapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PersonPage());
@@ -51,11 +53,11 @@ namespace TinyProject.Views
 
         private void TapRandomTapped(object sender, EventArgs e)
         {
-            var random = new Random();
-            var pages = new List<String> { "DeathPage", "QuotePage", "PersonPage" };
-            int index = random.Next(pages.Count);
-            Console.WriteLine(pages[index]);
-            Navigation.PushAsync(new );
+            //var random = new Random();
+            //var pages = new List<String> { "DeathPage", "QuotePage", "PersonPage" };
+            //int index = random.Next(pages.Count);
+            //Console.WriteLine(pages[index]);
+            Navigation.PushAsync(new PersonPage());
         }
     }
 }

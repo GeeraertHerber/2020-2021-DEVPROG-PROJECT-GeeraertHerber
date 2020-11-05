@@ -10,31 +10,31 @@
                 <RowDefinition/>
                 <RowDefinition Height="75"/>
             </Grid.RowDefinitions>
-            <Image Aspect="AspectFill" Source="https://www.weirdomatic.com/wp-content/pictures/2015/10/dustbin-smile-faces.jpg"/>
+            <Image Aspect="AspectFill" Source=""/>
             <BoxView Grid.Row="1" BackgroundColor="SteelBlue"/>
-            <ListView x:Name="lvwPersons" Grid.Row="2" SeparatorColor="SteelBlue" RowHeight="75">
+            <ListView x:Name="lvwPersons" Grid.Row="2" SeparatorColor="SteelBlue" RowHeight="75" ItemTapped="lvwPersons_ItemTapped" VerticalScrollBarVisibility="Always">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>  
-                            <Grid BackgroundColor="White">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="100"/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="50"/>
-                                </Grid.ColumnDefinitions>
+                        <ViewCell>
+                            
+                                <Grid BackgroundColor="White">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout VerticalOptions="Center" Grid.Column="0">
+                                        <Image x:Name="lblUrl" Source="{Binding img}"/>
+                                    </StackLayout>
+                                    <StackLayout VerticalOptions="Center" Grid.Column="1">
+                                        <Label x:Name="lblName" Text="{Binding name}" TextColor="Black" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                    </StackLayout>
+                                    <StackLayout VerticalOptions="Center" Grid.Column="2">
+                                        <Label x:Name="lblAppearance" Text="{Binding AppearanceToString}" TextColor="Black" VerticalOptions="Center"/>
+                                    </StackLayout>
 
-                                <StackLayout VerticalOptions="Center" Grid.Column="0">
-                                    <Image x:Name="lblUrl" Source="{Binding Url}"/>
-                                </StackLayout>
-                                <StackLayout VerticalOptions="Center" Grid.Column="1">
-                                    <Label x:Name="lblName" Text="{Binding Description}" TextColor="Black" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
-                                </StackLayout>
-                                <StackLayout VerticalOptions="Center" Grid.Column="2">
-                                    <Label x:Name="lblAppearance" Text="{Binding AppearanceToString,StringFormat='{F0:0} kg'  }" TextColor="Black" VerticalOptions="Center"/>
-                                </StackLayout>
-
-                            </Grid>
-
+                                </Grid>
+                        
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

@@ -23,6 +23,9 @@ namespace TinyProject
 
             List<Character> characters = await BBRepository.GetCharactersAsync();
             Debug.WriteLine($"Aantal Characters: {characters.Count}");
+
+            List<Character> character = await BBRepository.GetOneCharacterAsync(1);
+            Console.WriteLine(character);
             
         }
     }
