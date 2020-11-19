@@ -26,13 +26,16 @@ namespace TinyProject.Models
                 {
                     if (appearance.Count == 1)
                     {
-                        return $"Season: {appearance[0]}";
+                        return $"Appearces in season: {appearance[0]}";
                     }
-                    String seasons = "Seasons: ";
-                    foreach (int season in appearance)
+                    String seasons = "Appearces in seasons: ";
+                int count = 0;
+                    for(int i = 0; i < appearance.Count - 1; i++)
                     {
-                        seasons += $"{season},";
+                        seasons += $"{appearance[i]},";
+                    count += 1;
                     }
+                seasons += $" and {appearance[count]}";
                     return seasons;
 
                 }
@@ -48,10 +51,11 @@ namespace TinyProject.Models
                     int counter = 0;
                     for(int i = 0; i < occupation.Count - 1; i++)
                     {
-                        occupations += occupation[i];
+                        occupations += $"{occupation[i]},";
                         counter += 1;
                     }
-                    occupations += $" and {occupation[counter + 1]}";
+                    Console.WriteLine(counter);
+                    occupations += $" and {occupation[counter]}";
                     return occupations;
                 
                     }

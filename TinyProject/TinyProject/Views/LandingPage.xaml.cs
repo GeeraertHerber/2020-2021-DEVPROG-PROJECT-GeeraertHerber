@@ -64,15 +64,15 @@ namespace TinyProject.Views
             Console.WriteLine(randomInt);
             if(randomInt == 0)
             {
-                Navigation.PushAsync(new DetailPage(-1));
+                Navigation.PushAsync(new DetailPage());
             }
             else if(randomInt == 1)
             {
-                Navigation.PushAsync(new QuotePage(-1));
+                Navigation.PushAsync(new QuotePage());
             }
             else if(randomInt == 2)
             {
-                Navigation.PushAsync(new DeathPage(-1));
+                Navigation.PushAsync(new DeathPage());
             }
         }
     }

@@ -13,7 +13,7 @@ namespace TinyProject.Views
     public partial class DetailPage : ContentPage
     {
         public int ItemIndex { get; set; }
-        public DetailPage(int itemIndex)
+        public DetailPage(int itemIndex = 0)
         {
             ItemIndex = itemIndex;
             InitializeComponent();
