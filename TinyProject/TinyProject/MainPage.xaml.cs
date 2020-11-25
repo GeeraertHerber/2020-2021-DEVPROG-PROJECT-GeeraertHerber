@@ -21,13 +21,13 @@ namespace TinyProject
         public async void TestModels()
         {
 
-            List<Character> characters = await BBRepository.GetCharactersAsync();
+            List<Character> characters = await BreakingBadRepository.GetCharactersAsync();
             Debug.WriteLine($"Aantal Characters: {characters.Count}");
 
-            List<Character> character = await BBRepository.GetOneCharacterAsync(1);
+            List<Character> character = await BreakingBadRepository.GetOneCharacterAsync(1);
             Console.WriteLine(character);
 
-            List<Quote> quotes = await BBRepository.GetQuotes(1);
+            List<Quote> quotes = await BreakingBadRepository.GetQuotes(1);
             Console.WriteLine(quotes.Count);
 
 

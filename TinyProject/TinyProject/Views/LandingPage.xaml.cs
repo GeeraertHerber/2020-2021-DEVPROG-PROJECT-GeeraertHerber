@@ -58,21 +58,20 @@ namespace TinyProject.Views
             //var pages = new List<String> { "DeathPage", "QuotePage", "PersonPage" };
             //int index = random.Next(pages.Count);
             //Console.WriteLine(pages[index]);
-     
 
             int randomInt = _random.Next(3);
             Console.WriteLine(randomInt);
-            if(randomInt == 0)
+            if (randomInt == 0)
             {
-                Navigation.PushAsync(new DetailPage());
+                Navigation.PushAsync(new DetailPage(-1));
             }
-            else if(randomInt == 1)
+            else if (randomInt == 1)
             {
-                Navigation.PushAsync(new QuotePage());
+                Navigation.PushAsync(new QuotePage(-1));
             }
-            else if(randomInt == 2)
+            else if (randomInt == 2)
             {
-                Navigation.PushAsync(new DeathPage());
+                Navigation.PushAsync(new DeathPage(-1));
             }
         }
     }

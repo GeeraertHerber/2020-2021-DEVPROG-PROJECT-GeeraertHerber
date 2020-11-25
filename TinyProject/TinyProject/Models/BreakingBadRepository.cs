@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 
 namespace TinyProject.Models
 {
-    public static class BBRepository
+    public static class BreakingBadRepository
     {
-
-
         private async static Task<HttpClient> GetClient()
         {
             HttpClient httpClient = new HttpClient();
@@ -27,13 +25,32 @@ namespace TinyProject.Models
             return url + adding;
         }
 
-        public static async Task<List<Character>> GetCharactersAsync()
+        public static async Task<List<Character>> GetCharactersAsync(string parameters = "")
         {
             
             using (HttpClient client = await GetClient())
             {
-                
                 String url = completeUrl("characters");
+                if (parameters != "")
+                {
+                    string[] words = parameters.Split(' ');
+                    if(words.Length == 1)
+                    {
+                        url = completeUrl($"characters?name={words[0]}");
+                    }
+                    else
+                    {
+                        url = completeUrl($"characters?name=");
+                        int counter = 0;
+                        for(int i=0; i<words.Length-1; i++)
+                        {
+                            url += $"{words[i]}+";
+                            counter += 1;
+                        }
+                        url += words[counter];
+                    }
+                    
+                }   
                 Debug.WriteLine(url);
                 String json = await client.GetStringAsync(url);
 

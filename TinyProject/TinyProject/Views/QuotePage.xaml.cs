@@ -18,5 +18,10 @@ namespace TinyProject.Views
             ItemIndex = ItemIndex;
             InitializeComponent();
         }
+
+        public void ShowQuotes()
+        {
+           
+        }
     }
 }

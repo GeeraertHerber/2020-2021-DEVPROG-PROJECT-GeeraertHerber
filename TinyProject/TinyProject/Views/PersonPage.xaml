@@ -5,12 +5,20 @@
     <ContentPage.Content>
         <Grid RowSpacing="0" VerticalOptions="FillAndExpand" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="200"/>
+                <RowDefinition Height="100"/>
                 <RowDefinition Height="10"/>
                 <RowDefinition/>
                 <RowDefinition Height="75"/>
             </Grid.RowDefinitions>
-            <Image Aspect="AspectFill" Source=""/>
+            <Label Text="Name" FontSize="Medium" Margin="8"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Entry x:Name="lblNameFilter" Grid.Column="0"  ClearButtonVisibility="WhileEditing" ReturnType="Search" Text="Walter"/>
+                <Button x:Name="btnSearch" Grid.Column="1" Clicked="btnSearch_ClickedAsync" Text="Go"/>
+            </Grid>
             <BoxView Grid.Row="1" BackgroundColor="SteelBlue"/>
             <ListView x:Name="lvwPersons" Grid.Row="2" SeparatorColor="SteelBlue" RowHeight="75" ItemTapped="lvwPersons_ItemTapped" VerticalScrollBarVisibility="Always">
                 <ListView.ItemTemplate>
