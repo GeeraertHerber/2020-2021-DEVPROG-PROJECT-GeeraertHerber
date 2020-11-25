@@ -51,5 +51,10 @@ namespace TinyProject.Views
             lblOccupation.Text = characters[0].OccupationToString;
             lblBirthday.Text = characters[0].birthday;
         }
+
+        private void btnQuotes_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

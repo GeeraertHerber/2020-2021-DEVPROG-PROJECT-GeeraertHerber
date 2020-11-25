@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using TinyProject.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,11 +17,12 @@ namespace TinyProject.Views
         {
             ItemIndex = ItemIndex;
             InitializeComponent();
+            ShowQuotes();
         }
 
-        public void ShowQuotes()
+        public async void ShowQuotes()
         {
-           
+            
         }
     }
 }

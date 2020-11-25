@@ -6,11 +6,11 @@
         <Grid BackgroundColor="LightGoldenrodYellow">
             <Grid.RowDefinitions>
                 <RowDefinition Height="130"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
                 <RowDefinition Height="100"/>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
@@ -42,16 +42,19 @@
                 </Grid>
             </Grid>
 
-            <StackLayout VerticalOptions="Center" Grid.Row="3" Padding="8">
+            <StackLayout VerticalOptions="Center" Grid.Row="2" Padding="8">
                 <Label x:Name="lblAppearance"  TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
             </StackLayout>
-            <StackLayout VerticalOptions="Center" Grid.Row="4" Padding="8">
+            <StackLayout VerticalOptions="Center" Grid.Row="3" Padding="8">
                 <Label x:Name="lblOccupation"  TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
             </StackLayout>
-            <StackLayout VerticalOptions="Center" Grid.Row="5" Padding="8">
+            <StackLayout VerticalOptions="Center" Grid.Row="4" Padding="8">
                 <Label Text="Date of birth:" TextColor="Black" FontSize="Medium"/>
                 <Label x:Name="lblBirthday" Text="Unknown" TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
             </StackLayout>
+            <StackLayout HeightRequest=""/>
+            <Button x:Name="btnQuotes" Clicked="btnQuotes_Clicked" Grid.Row="6" Text="See quotes" Margin="8, 8 ,16, 8" VerticalOptions="End"  BackgroundColor="SteelBlue" TextColor="Wheat"/>
         </Grid>
+        
     </ContentPage.Content>
 </ContentPage>

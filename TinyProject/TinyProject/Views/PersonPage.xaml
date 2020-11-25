@@ -24,31 +24,26 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            
-                                <Grid BackgroundColor="White">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="100"/>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition />
-                                    </Grid.ColumnDefinitions>
-                                    <StackLayout VerticalOptions="Center" Grid.Column="0">
-                                        <Image x:Name="lblUrl" Source="{Binding img}"/>
-                                    </StackLayout>
-                                    <StackLayout VerticalOptions="Center" Grid.Column="1">
-                                        <Label x:Name="lblName" Text="{Binding name}" TextColor="Black" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
-                                    </StackLayout>
-                                    <StackLayout VerticalOptions="Center" Grid.Column="2">
-                                        <Label x:Name="lblAppearance" Text="{Binding AppearanceToString}" TextColor="Black" VerticalOptions="Center"/>
-                                    </StackLayout>
-
-                                </Grid>
-                        
+                            <Grid BackgroundColor="White">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout VerticalOptions="Center" Grid.Column="0">
+                                    <Image x:Name="lblUrl" Source="{Binding img}"/>
+                                </StackLayout>
+                                <StackLayout VerticalOptions="Center" Grid.Column="1">
+                                    <Label x:Name="lblName" Text="{Binding name}" TextColor="Black" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                </StackLayout>
+                                <StackLayout VerticalOptions="Center" Grid.Column="2">
+                                    <Label x:Name="lblAppearance" Text="{Binding AppearanceToString}" TextColor="Black" VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
-            <Button x:Name="btnGoBack" Clicked="btnGoBack_Clicked" Grid.Row="3" Text="Go Back" Margin="8" BackgroundColor="SteelBlue" TextColor="Wheat"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
