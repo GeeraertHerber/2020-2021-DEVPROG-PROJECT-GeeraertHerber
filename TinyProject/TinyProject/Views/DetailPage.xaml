@@ -3,10 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TinyProject.Views.DetailPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid BackgroundColor="LightGoldenrodYellow">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="130"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition/>
+                   
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Padding="8">
+                    <Image x:Name="imgUrl" Source="" Aspect="AspectFit"/>
+                </StackLayout>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="75"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout VerticalOptions="Center" Grid.Row="0" Padding="8">
+                        <Label Text="Name:" TextColor="Black" FontSize="Medium"/>
+                        <Label x:Name="lblName" TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="Center" Grid.Row="1" Padding="8">
+                        <Label Text="Nickname(s):" TextColor="Black" FontSize="Medium"/>
+                        <Label x:Name="lblNickname" TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="Center" Grid.Row="2" Padding="8">
+                        <Label Text="Is alive?" TextColor="Black" FontSize="Medium"/>
+                        <Label x:Name="lblStatus" TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+
+            <StackLayout VerticalOptions="Center" Grid.Row="2" Padding="8">
+                <Label x:Name="lblAppearance"  TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="Center" Grid.Row="3" Padding="8">
+                <Label x:Name="lblOccupation"  TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="Center" Grid.Row="4" Padding="8">
+                <Label Text="Date of birth:" TextColor="Black" FontSize="Medium"/>
+                <Label x:Name="lblBirthday" Text="Unknown" TextColor="Black" VerticalOptions="Center" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout HeightRequest=""/>
+            <Button x:Name="btnQuotes" Clicked="btnQuotes_Clicked" Grid.Row="6" Text="See quotes" Margin="8, 8 ,16, 8" VerticalOptions="End"  BackgroundColor="SteelBlue" TextColor="Wheat"/>
+        </Grid>
+        
     </ContentPage.Content>
 </ContentPage>

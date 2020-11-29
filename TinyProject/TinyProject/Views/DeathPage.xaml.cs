@@ -12,8 +12,10 @@ namespace TinyProject.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DeathPage : ContentPage
     {
-        public DeathPage()
+        public int ItemIndex { get; set; }
+        public DeathPage(int itemIndex = 0)
         {
+            ItemIndex = itemIndex;
             InitializeComponent();
         }
     }

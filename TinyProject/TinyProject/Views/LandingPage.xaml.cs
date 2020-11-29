@@ -13,6 +13,7 @@ namespace TinyProject.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LandingPage : ContentPage
     {
+        private readonly Random _random = new Random();
         public LandingPage()
         {
             InitializeComponent();
@@ -34,6 +35,8 @@ namespace TinyProject.Views
             tapRandom.Tapped += TapRandomTapped;
             frmRandom.GestureRecognizers.Add(tapRandom);
         }
+
+        
         private void TapCharacterTapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PersonPage());
@@ -51,11 +54,25 @@ namespace TinyProject.Views
 
         private void TapRandomTapped(object sender, EventArgs e)
         {
-            var random = new Random();
-            var pages = new List<String> { "DeathPage", "QuotePage", "PersonPage" };
-            int index = random.Next(pages.Count);
-            Console.WriteLine(pages[index]);
-            Navigation.PushAsync(new );
+            //var random = new Random();
+            //var pages = new List<String> { "DeathPage", "QuotePage", "PersonPage" };
+            //int index = random.Next(pages.Count);
+            //Console.WriteLine(pages[index]);
+
+            int randomInt = _random.Next(3);
+            Console.WriteLine(randomInt);
+            if (randomInt == 0)
+            {
+                Navigation.PushAsync(new DetailPage(-1));
+            }
+            else if (randomInt == 1)
+            {
+                Navigation.PushAsync(new QuotePage(-1));
+            }
+            else if (randomInt == 2)
+            {
+                Navigation.PushAsync(new DeathPage(-1));
+            }
         }
     }
 }
